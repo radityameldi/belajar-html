@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nama Anda — Portofolio</title>
+<meta name="description" content="Portofolio pribadi Nama Anda — karya, tentang, dan kontak.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#konten" class="skip-link">Lewati ke konten</a>
+
+<header class="site-header">
+  <a href="#" class="logo">Nama Anda</a>
+  <nav class="main-nav" aria-label="Navigasi utama">
+    <a href="#karya" data-nav="karya">Karya</a>
+    <a href="#tentang" data-nav="tentang">Tentang</a>
+    <a href="#kontak" data-nav="kontak">Kontak</a>
+  </nav>
+</header>
+
+<main id="konten">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1 class="hero-title">
+      <span class="line-wrap"><span class="line">Saya membuat hal-hal</span></span>
+      <span class="line-wrap"><span class="line">yang layak diperhatikan.</span></span>
+    </h1>
+    <p class="hero-sub">
+      Nama Anda — ganti dengan peran atau profesi Anda. Berbasis di kota Anda,
+      mengerjakan proyek untuk klien maupun eksplorasi pribadi.
+    </p>
+    <div class="scroll-cue">
+      <span class="scroll-line" aria-hidden="true"></span>
+      <span>Gulir untuk melihat karya</span>
+    </div>
+  </section>
+
+  <!-- ===== KARYA / WORK ===== -->
+  <section class="work" id="karya">
+    <div class="section-head">
+      <h2>Karya terpilih</h2>
+      <span class="section-rule" aria-hidden="true"></span>
+    </div>
+
+    <ul class="project-list" id="projectList">
+      <li class="project-row" data-color="#B08A3E">
+        <a href="#" class="project-link">
+          <span class="project-title">Nama Proyek Satu</span>
+          <span class="project-meta">Kategori — 2025</span>
+        </a>
+      </li>
+      <li class="project-row" data-color="#5B6B73">
+        <a href="#" class="project-link">
+          <span class="project-title">Nama Proyek Dua</span>
+          <span class="project-meta">Kategori — 2024</span>
+        </a>
+      </li>
+      <li class="project-row" data-color="#7C6A55">
+        <a href="#" class="project-link">
+          <span class="project-title">Nama Proyek Tiga</span>
+          <span class="project-meta">Kategori — 2024</span>
+        </a>
+      </li>
+      <li class="project-row" data-color="#3F5147">
+        <a href="#" class="project-link">
+          <span class="project-title">Nama Proyek Empat</span>
+          <span class="project-meta">Kategori — 2023</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Kotak pratinjau yang mengikuti kursor saat hover di baris proyek -->
+    <div class="project-preview" id="projectPreview" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== TENTANG / ABOUT ===== -->
+  <section class="about" id="tentang">
+    <div class="about-head">
+      <h2>Tentang saya</h2>
+    </div>
+    <div class="about-body">
+      <p>
+        Tulis paragraf singkat tentang perjalanan Anda — bagaimana Anda memulai,
+        apa yang Anda kerjakan sekarang, dan pendekatan kerja yang membedakan Anda.
+        Cukup tiga sampai empat kalimat, tidak perlu panjang.
+      </p>
+      <p class="about-tagline">
+        Saya percaya karya terbaik lahir dari rasa ingin tahu dan kesabaran mengulang.
+      </p>
+
+      <div class="skills">
+        <h3>Keahlian</h3>
+        <ul class="skills-list">
+          <li>Keahlian Satu</li>
+          <li>Keahlian Dua</li>
+          <li>Keahlian Tiga</li>
+          <li>Keahlian Empat</li>
+          <li>Keahlian Lima</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONTAK / CONTACT ===== -->
+  <section class="contact" id="kontak">
+    <h2>Mari berkolaborasi</h2>
+    <a href="mailto:nama@email.com" class="contact-email">nama@email.com</a>
+    <nav class="social-links" aria-label="Tautan sosial">
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Nama Anda. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

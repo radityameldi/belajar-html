@@ -1,0 +1,421 @@
+/* ============================================
+   TOKEN — ganti nilai di sini untuk mengubah
+   tema warna & tipografi di seluruh halaman
+   ============================================ */
+:root {
+  --paper: #fbfaf7;
+  --ink: #17181c;
+  --ink-soft: #58595f;
+  --ink-faint: #9a9a95;
+  --accent: #b08a3e;
+  --accent-tint: #efe6d3;
+  --line: #e4e1d8;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --max-width: 900px;
+  --edge: clamp(24px, 6vw, 72px);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESET DASAR
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+}
+
+p { margin: 0 0 1em; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+img { max-width: 100%; display: block; }
+
+/* Fokus keyboard yang jelas terlihat */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 20px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: var(--edge);
+  top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px var(--edge);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.25s var(--ease);
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--ink);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(80px, 16vw, 160px) var(--edge) clamp(60px, 10vw, 100px);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  max-width: 14ch;
+}
+
+.line-wrap {
+  display: block;
+  overflow: hidden;
+}
+
+.line {
+  display: block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 0.9s var(--ease), opacity 0.9s var(--ease);
+}
+
+body.loaded .line-wrap:nth-child(1) .line { transition-delay: 0.05s; }
+body.loaded .line { transform: translateY(0); opacity: 1; }
+
+.hero-sub {
+  margin-top: 28px;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.scroll-cue {
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+.scroll-line {
+  width: 32px;
+  height: 1px;
+  background: var(--ink-faint);
+}
+
+/* ============================================
+   WORK / KARYA
+   ============================================ */
+.work {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 80px) var(--edge) clamp(80px, 10vw, 120px);
+  position: relative;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.section-head h2 {
+  font-size: 1.6rem;
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.project-row {
+  border-top: 1px solid var(--line);
+}
+
+.project-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 4px;
+  transition: padding-left 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  padding-left: 14px;
+  color: var(--accent);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+/* Pratinjau proyek yang mengikuti kursor (desktop) */
+.project-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 150px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+  z-index: 30;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+.project-preview.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 720px) {
+  .project-preview { display: none; }
+}
+
+/* ============================================
+   ABOUT / TENTANG
+   ============================================ */
+.about {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 80px) var(--edge);
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.about-head h2 {
+  font-size: 1.6rem;
+  position: sticky;
+  top: 100px;
+}
+
+.about-body p {
+  max-width: 60ch;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+
+.about-tagline {
+  font-style: italic;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.skills {
+  margin-top: 32px;
+}
+
+.skills h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.skills-list li {
+  font-size: 0.92rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--accent-tint);
+}
+
+@media (max-width: 640px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .about-head h2 { position: static; }
+}
+
+/* ============================================
+   CONTACT / KONTAK
+   ============================================ */
+.contact {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(60px, 12vw, 120px) var(--edge);
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+
+.contact h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 24px;
+}
+
+.contact-email {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+  transition: opacity 0.25s var(--ease);
+}
+
+.contact-email:hover { opacity: 0.7; }
+
+.social-links {
+  margin-top: 36px;
+  display: flex;
+  gap: 24px;
+}
+
+.social-links a {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  transition: color 0.25s var(--ease);
+}
+
+.social-links a:hover { color: var(--ink); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px var(--edge) 48px;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+/* ============================================
+   RESPONSIVE — mobile
+   ============================================ */
+@media (max-width: 560px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+  .main-nav {
+    gap: 16px;
+  }
+  .hero, .work, .about, .contact, .site-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .project-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
