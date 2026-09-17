@@ -455,21 +455,46 @@ main {
 
 .social-row {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   padding: 0 var(--edge) 80px;
 }
 
 .social-row a {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
   color: var(--fg-dim);
-  border-bottom: 1px solid transparent;
-  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
+    background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.social-row a svg {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .social-row a:hover {
-  color: var(--fg);
+  color: var(--bg);
+  background: var(--accent);
   border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Teks tetap ada untuk pembaca layar, tapi tidak terlihat */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ============================================
