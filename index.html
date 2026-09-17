@@ -3,128 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nama Anda — Portofolio</title>
+<title>Raditya Meldi — Portofolio</title>
 <meta name="description" content="Portofolio pribadi Nama Anda — karya, tentang, dan kontak.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Kursor kustom (hanya aktif di perangkat dengan mouse) -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
 <a href="#konten" class="skip-link">Lewati ke konten</a>
 
-<header class="site-header">
-  <a href="#" class="logo">Nama Anda</a>
-  <nav class="main-nav" aria-label="Navigasi utama">
-    <a href="#karya" data-nav="karya">Karya</a>
-    <a href="#tentang" data-nav="tentang">Tentang</a>
-    <a href="#kontak" data-nav="kontak">Kontak</a>
+<!-- ===== SIDEBAR NAVIGASI ===== -->
+<aside class="sidebar">
+  <div class="side-top">
+    <div class="side-avatar">
+      <img src="foto-saya.jpg" alt="Foto Nama Anda">
+    </div>
+    <a href="#" class="side-logo">Raditya Meldi</a>
+  </div>
+  <nav class="side-nav" aria-label="Navigasi utama">
+    <a href="#karya" data-nav="karya"><span class="dot"></span><span class="side-label">Karya</span></a>
+    <a href="#tentang" data-nav="tentang"><span class="dot"></span><span class="side-label">Tentang</span></a>
+    <a href="#kontak" data-nav="kontak"><span class="dot"></span><span class="side-label">Kontak</span></a>
   </nav>
-</header>
+  <span class="side-foot">© <span id="year"></span></span>
+</aside>
 
 <main id="konten">
 
   <!-- ===== HERO ===== -->
-  <section class="hero">
-    <h1 class="hero-title">
-      <span class="line-wrap"><span class="line">Saya membuat hal-hal</span></span>
-      <span class="line-wrap"><span class="line">yang layak diperhatikan.</span></span>
-    </h1>
-    <p class="hero-sub">
-      Nama Anda — ganti dengan peran atau profesi Anda. Berbasis di kota Anda,
-      mengerjakan proyek untuk klien maupun eksplorasi pribadi.
-    </p>
-    <div class="scroll-cue">
-      <span class="scroll-line" aria-hidden="true"></span>
-      <span>Gulir untuk melihat karya</span>
-    </div>
+  <section class="hero-grid">
+    <div class="hero-index"><span>INDEX</span><span>01</span></div>
+    <h1 class="mega-title">Raditya<br>Meldi<span class="accent-dot">.</span></h1>
+    <p class="hero-role">Mahasiswa Siskom</p>
   </section>
 
-  <!-- ===== KARYA / WORK ===== -->
+  <!-- Teks berjalan -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>TERSEDIA UNTUK PROYEK BARU — 2026 —</span>
+      <span>TERSEDIA UNTUK PROYEK BARU — 2026 —</span>
+      <span>TERSEDIA UNTUK PROYEK BARU — 2026 —</span>
+      <span>TERSEDIA UNTUK PROYEK BARU — 2026 —</span>
+    </div>
+  </div>
+
+  <!-- ===== KARYA ===== -->
   <section class="work" id="karya">
-    <div class="section-head">
-      <h2>Karya terpilih</h2>
-      <span class="section-rule" aria-hidden="true"></span>
+    <div class="section-label"><span>02</span><h2>Karya</h2></div>
+
+    <div class="grid-gallery">
+      <article class="tile reveal" style="--tile-color:#FF3E63;">
+        <a href="#">
+          <span class="tile-num">01</span>
+          <span class="tile-title">Nama Proyek Satu</span>
+          <span class="tile-meta">Kategori · 2025</span>
+        </a>
+      </article>
+      <article class="tile reveal" style="--tile-color:#6C5CE7;">
+        <a href="#">
+          <span class="tile-num">02</span>
+          <span class="tile-title">Nama Proyek Dua</span>
+          <span class="tile-meta">Kategori · 2025</span>
+        </a>
+      </article>
+      <article class="tile reveal" style="--tile-color:#2ECC9B;">
+        <a href="#">
+          <span class="tile-num">03</span>
+          <span class="tile-title">Nama Proyek Tiga</span>
+          <span class="tile-meta">Kategori · 2024</span>
+        </a>
+      </article>
+      <article class="tile reveal" style="--tile-color:#FFB648;">
+        <a href="#">
+          <span class="tile-num">04</span>
+          <span class="tile-title">Nama Proyek Empat</span>
+          <span class="tile-meta">Kategori · 2024</span>
+        </a>
+      </article>
     </div>
-
-    <ul class="project-list" id="projectList">
-      <li class="project-row" data-color="#B08A3E">
-        <a href="#" class="project-link">
-          <span class="project-title">Nama Proyek Satu</span>
-          <span class="project-meta">Kategori — 2025</span>
-        </a>
-      </li>
-      <li class="project-row" data-color="#5B6B73">
-        <a href="#" class="project-link">
-          <span class="project-title">Nama Proyek Dua</span>
-          <span class="project-meta">Kategori — 2024</span>
-        </a>
-      </li>
-      <li class="project-row" data-color="#7C6A55">
-        <a href="#" class="project-link">
-          <span class="project-title">Nama Proyek Tiga</span>
-          <span class="project-meta">Kategori — 2024</span>
-        </a>
-      </li>
-      <li class="project-row" data-color="#3F5147">
-        <a href="#" class="project-link">
-          <span class="project-title">Nama Proyek Empat</span>
-          <span class="project-meta">Kategori — 2023</span>
-        </a>
-      </li>
-    </ul>
-
-    <!-- Kotak pratinjau yang mengikuti kursor saat hover di baris proyek -->
-    <div class="project-preview" id="projectPreview" aria-hidden="true"></div>
   </section>
 
-  <!-- ===== TENTANG / ABOUT ===== -->
+  <!-- ===== TENTANG ===== -->
   <section class="about" id="tentang">
-    <div class="about-head">
-      <h2>Tentang saya</h2>
-    </div>
-    <div class="about-body">
-      <p>
+    <div class="section-label"><span>03</span><h2>Tentang</h2></div>
+
+    <div class="about-grid">
+      <!-- Ganti "foto-saya.jpg" dengan nama file foto Anda -->
+      <div class="about-photo">
+        <img src="foto-saya.jpg" alt="Foto Nama Anda">
+      </div>
+
+      <p class="about-text">
         Tulis paragraf singkat tentang perjalanan Anda — bagaimana Anda memulai,
-        apa yang Anda kerjakan sekarang, dan pendekatan kerja yang membedakan Anda.
-        Cukup tiga sampai empat kalimat, tidak perlu panjang.
-      </p>
-      <p class="about-tagline">
-        Saya percaya karya terbaik lahir dari rasa ingin tahu dan kesabaran mengulang.
+        apa yang Anda kerjakan sekarang, dan pendekatan kerja yang membedakan Anda
+        dari yang lain.
       </p>
 
-      <div class="skills">
-        <h3>Keahlian</h3>
-        <ul class="skills-list">
-          <li>Keahlian Satu</li>
-          <li>Keahlian Dua</li>
-          <li>Keahlian Tiga</li>
-          <li>Keahlian Empat</li>
-          <li>Keahlian Lima</li>
-        </ul>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" data-count="0">0</span>
+          <span class="stat-label">Tahun pengalaman</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="0">0</span>
+          <span class="stat-label">Proyek selesai</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="0">0</span>
+          <span class="stat-label">Klien puas</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== KONTAK / CONTACT ===== -->
+  <!-- ===== KONTAK ===== -->
   <section class="contact" id="kontak">
-    <h2>Mari berkolaborasi</h2>
-    <a href="mailto:nama@email.com" class="contact-email">nama@email.com</a>
-    <nav class="social-links" aria-label="Tautan sosial">
-      <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <div class="section-label"><span>04</span><h2>Kontak</h2></div>
+
+    <a href="mailto:radityameldi@gmail.com" class="mega-email">
+      Sapa saya<br>radityameldi@gmail.com
+    </a>
+
+    <nav class="social-row" aria-label="Tautan sosial">
+      <a href="https://www.instagram.com/raditya_meldi" target="_blank" rel="noopener">Instagram</a>
       <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/radityameldi" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </section>
 
-</main>
+  <footer class="site-footer-alt">
+    <p>Dibuat dengan HTML, CSS &amp; JavaScript.</p>
+  </footer>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> Nama Anda. Dibuat dengan HTML, CSS &amp; JavaScript.</p>
-</footer>
+</main>
 
 <script src="script.js"></script>
 </body>
